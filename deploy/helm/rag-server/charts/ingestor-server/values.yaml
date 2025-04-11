@@ -126,7 +126,7 @@ nv-ingest:
         tag: v2.5.3-gpu
         pullPolicy: IfNotPresent
     standalone:
-      resources:
-        limits:
-          nvidia.com/gpu: 1
+      resources: {}
+        # limits:
+        #   nvidia.com/gpu: 1
     fullnameOverride: "milvus"
