@@ -34,6 +34,7 @@ services:
               capabilities: ["gpu"]
               # count: ${INFERENCE_GPU_COUNT:-all}
               device_ids: ['${VECTORSTORE_GPU_DEVICE_ID:-0}']
+    restart: always
 
   etcd:
     container_name: milvus-etcd
@@ -51,6 +52,7 @@ services:
       interval: 30s
       timeout: 20s
       retries: 3
+    restart: always
 
   minio:
     container_name: milvus-minio
@@ -69,6 +71,8 @@ services:
       interval: 30s
       timeout: 20s
       retries: 3
+
+    restart: always
 
 networks:
   default:

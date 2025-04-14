@@ -115,6 +115,8 @@ services:
       - "8081"
     shm_size: 5gb
 
+    restart: always
+
   # Sample UI container which interacts with APIs exposed by rag-server container
   rag-playground:
     container_name: rag-playground
@@ -140,6 +142,8 @@ services:
       - "3000"
     depends_on:
       - rag-server
+
+    restart: always
 
 networks:
   default:
